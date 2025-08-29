@@ -17,10 +17,10 @@ func move(delta: float) -> void: # runs player movement
 	# vertical movement
 	if !jumping && Input.is_action_pressed("jump"):
 		jumping = true;
-		velocity.y -= 200;
-	velocity.y = 1000;
-	if area_2d.area_entered: # allows for jump after touching ground(or other object)
-		jumping = false;
+		velocity.y = -500;
+		
+		velocity.y += 500;
+	velocity.y + 100
 	
 	#horizontal movement
 	if directionX == -1: # Flip the sprite
@@ -29,6 +29,6 @@ func move(delta: float) -> void: # runs player movement
 		animated_sprite_2d.flip_h = true;
 	
 	velocity.x = directionX * SPEED; # horizontal movement
-	animated_sprite_2d.play("move");
+	#animated_sprite_2d.play("move");
 	
 	move_and_slide();
