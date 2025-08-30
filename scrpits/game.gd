@@ -21,13 +21,16 @@ func _process(delta: float) -> void:
 	
 	if results == 0 && number_to_be_calculated != "":
 		results_label.text = str(number_to_be_calculated); # updates the results_label to the current input
+		results_label.z_index = 0;
 	else: 
-		results_label.text = str(results); # updates the results_label to the output
+		results_label.text = "Result: " + str(results); # updates the results_label to the output
+		results_label.z_index = 5;
 	
 	if manual_input.is_visible_in_tree(): # continuously run _manual_input() if manual_input is visible.
 		_manual_input();
 
 func _add_to_calc(value: int): # adds a given number to the list of numberrs
+	results = 0;
 	number_to_be_calculated += str(value);
 	print(number_to_be_calculated);
 
@@ -47,7 +50,8 @@ func _manual_input() -> void: # code for the manual input
 
 func calculate(input: int): # converts the stored number_to_be_calculated into an int, calling number_sum with it and sets results to the output of number_sum
 	results = number_sum(int(input));
-
+	number_to_be_calculated = "";
+	
 func _calculate_results() -> void:
 	calculate(int(number_to_be_calculated));
 

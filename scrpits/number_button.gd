@@ -2,6 +2,8 @@ extends Button
 
 @export var value = 0; # value for the button, default 0
 
+@onready var boring_shack_image: Sprite2D = $BoringShackImage
+
 @onready var darken_rect: ColorRect = $DarkenRect
 
 @onready var click_delay: Timer = $ClickDelay
@@ -10,40 +12,39 @@ extends Button
 @onready var ray_cast_2d_2: RayCast2D = $RayCast2D2
 
 func _ready() -> void:
+	boring_shack_image.hide();
 	darken_rect.hide();
 	SignalBus.slime_press.connect(_on_slime_press);
-	text = str(value); # temporary number to distinguish buttons
+	#text = str(value); # temporary number to distinguish buttons
 	match value: # set the icon depending on the value
 		0:
-			self.icon = preload("res://icon.svg");
+			self.icon = preload("res://sprites/button_0.png");
 		1:
-			self.icon = preload("res://icon.svg");
+			self.icon = preload("res://sprites/button_1.png");
 		2:
-			self.icon = preload("res://icon.svg");
+			self.icon = preload("res://sprites/button_2.png");
 		3:
-			self.icon = preload("res://icon.svg");
+			self.icon = preload("res://sprites/button_3.png");
 		4:
-			self.icon = preload("res://icon.svg");
+			self.icon = preload("res://sprites/button_4.png");
 		5:
-			self.icon = preload("res://icon.svg");
+			self.icon = preload("res://sprites/button_5.png");
 		6:
-			self.icon = preload("res://icon.svg");
+			self.icon = preload("res://sprites/button_6.png");
 		7:
-			self.icon = preload("res://icon.svg");
+			self.icon = preload("res://sprites/button_7.png");
 		8:
-			self.icon = preload("res://icon.svg");
+			self.icon = preload("res://sprites/button_8.png");
 		9:
-			self.icon = preload("res://icon.svg");
+			self.icon = preload("res://sprites/button_9.png");
 		10:
-			text = "Submit";
-			self.icon = null;
+			self.icon = preload("res://sprites/button_submit.png");
 		11:
-			text = "Backspace";
-			self.icon = null;
+			self.icon = preload("res://sprites/button_delete.png");
 		12:
 			text = "BoringShack";
-			#self.icon = preload("res://icon.svg");
 			self.icon = null;
+			boring_shack_image.show();
 			
 
 
