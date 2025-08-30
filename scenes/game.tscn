@@ -1,36 +1,254 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmyxd7wkaq7v0"]
+[gd_scene load_steps=10 format=3 uid="uid://bmyxd7wkaq7v0"]
 
-[ext_resource type="Script" uid="uid://bms8te7hffdjl" path="res://scenes/game.gd" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://bms8te7hffdjl" path="res://scrpits/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://4bccyefe3f40" path="res://scenes/slime.tscn" id="2_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://dcjyqidyqm4bi" path="res://icon.svg" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://b7xmrq0d2ikll" path="res://scenes/platorm.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://b4ji80wm2246y" path="res://scenes/platorm_s.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://b6v75ufqxa603" path="res://scenes/number_button.tscn" id="6_p57ef"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8cj0n"]
-size = Vector2(1186, 73)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqjtg"]
+size = Vector2(5232, 77)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yqjtg"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lnu2h"]
+normal = Vector2(1, 0)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_uwrxv")
 
 [node name="Sky" type="ColorRect" parent="."]
-offset_right = 1149.0
-offset_bottom = 646.0
+offset_left = -2335.0
+offset_top = -1267.0
+offset_right = 3407.0
+offset_bottom = 868.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.458824, 0.882353, 1, 1)
 
-[node name="Ground" type="StaticBody2D" parent="."]
-
-[node name="GroundTexture" type="ColorRect" parent="Ground"]
-offset_left = -9.0
-offset_top = 598.0
-offset_right = 1175.0
-offset_bottom = 668.0
-color = Color(0.121401, 0.751045, 0.440637, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-position = Vector2(583, 633.5)
-shape = SubResource("RectangleShape2D_8cj0n")
-
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 visible = false
 
+[node name="ResultsLabel" type="Label" parent="."]
+offset_left = -718.0
+offset_top = -129.0
+offset_right = 1809.0
+offset_bottom = 205.0
+theme_override_font_sizes/font_size = 160
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="Platorm" parent="Platforms" instance=ExtResource("4_lbhrr")]
+position = Vector2(14, 403)
+
+[node name="Platorm2" parent="Platforms" instance=ExtResource("4_lbhrr")]
+position = Vector2(783, 171)
+
+[node name="Platorm3" parent="Platforms" instance=ExtResource("4_lbhrr")]
+position = Vector2(255, -59)
+
+[node name="Platorm5" parent="Platforms" instance=ExtResource("4_lbhrr")]
+position = Vector2(-696, -291)
+
+[node name="Platorm6" parent="Platforms" instance=ExtResource("4_lbhrr")]
+position = Vector2(1413, -231)
+
+[node name="Platorm9" parent="Platforms" instance=ExtResource("4_lbhrr")]
+position = Vector2(-356, -36)
+
+[node name="Platorm7" parent="Platforms" instance=ExtResource("4_lbhrr")]
+position = Vector2(2440, 286)
+
+[node name="Platorm8" parent="Platforms" instance=ExtResource("4_lbhrr")]
+position = Vector2(1586, 457)
+
+[node name="Platorm4" parent="Platforms" instance=ExtResource("4_lbhrr")]
+position = Vector2(-896, 202)
+
+[node name="PlatormS" parent="Platforms" instance=ExtResource("5_iywne")]
+position = Vector2(-410, 317)
+
+[node name="PlatormS2" parent="Platforms" instance=ExtResource("5_iywne")]
+position = Vector2(391, 245)
+
+[node name="PlatormS3" parent="Platforms" instance=ExtResource("5_iywne")]
+position = Vector2(1185, 345)
+
+[node name="PlatormS14" parent="Platforms" instance=ExtResource("5_iywne")]
+position = Vector2(1118, -83)
+
+[node name="PlatormS4" parent="Platforms" instance=ExtResource("5_iywne")]
+position = Vector2(2025, 389)
+
+[node name="PlatormS5" parent="Platforms" instance=ExtResource("5_iywne")]
+position = Vector2(2103, 72)
+
+[node name="PlatormS6" parent="Platforms" instance=ExtResource("5_iywne")]
+position = Vector2(1825, -117)
+
+[node name="PlatormS7" parent="Platforms" instance=ExtResource("5_iywne")]
+position = Vector2(919, -395)
+
+[node name="PlatormS15" parent="Platforms" instance=ExtResource("5_iywne")]
+position = Vector2(-765, -44)
+
+[node name="PlatormS8" parent="Platforms" instance=ExtResource("5_iywne")]
+position = Vector2(-171, -239)
+
+[node name="PlatormS9" parent="Platforms" instance=ExtResource("5_iywne")]
+position = Vector2(663, -45)
+
+[node name="PlatormS10" parent="Platforms" instance=ExtResource("5_iywne")]
+position = Vector2(-1239, 50)
+
+[node name="PlatormS11" parent="Platforms" instance=ExtResource("5_iywne")]
+position = Vector2(-1411, -139)
+
+[node name="PlatormS12" parent="Platforms" instance=ExtResource("5_iywne")]
+position = Vector2(-1089, -234)
+
+[node name="PlatormS13" parent="Platforms" instance=ExtResource("5_iywne")]
+position = Vector2(2809, 461)
+
+[node name="Boundaries" type="Node" parent="."]
+
+[node name="Ground" type="StaticBody2D" parent="Boundaries"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Ground"]
+position = Vector2(583, 633.5)
+shape = SubResource("RectangleShape2D_yqjtg")
+
+[node name="Icon" type="Sprite2D" parent="Boundaries/Ground"]
+position = Vector2(631.5, 894)
+scale = Vector2(41.3516, 4.73437)
+texture = ExtResource("3_lnu2h")
+
+[node name="WallR" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(3191, 30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/WallR"]
+shape = SubResource("WorldBoundaryShape2D_yqjtg")
+
+[node name="WallL" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(-1891, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/WallL"]
+shape = SubResource("WorldBoundaryShape2D_lnu2h")
+
+[node name="NumberButtons" type="Node" parent="."]
+
+[node name="NumberButton" parent="NumberButtons" instance=ExtResource("6_p57ef")]
+offset_left = -764.0
+offset_top = -453.0
+offset_right = -628.0
+offset_bottom = -317.0
+value = 8
+
+[node name="NumberButton11" parent="NumberButtons" instance=ExtResource("6_p57ef")]
+offset_left = 2099.0
+offset_top = 461.0
+offset_right = 2235.0
+offset_bottom = 597.0
+value = 11
+
+[node name="NumberButton2" parent="NumberButtons" instance=ExtResource("6_p57ef")]
+offset_left = -959.0
+offset_top = 48.0
+offset_right = -823.0
+offset_bottom = 184.0
+value = 2
+
+[node name="NumberButton3" parent="NumberButtons" instance=ExtResource("6_p57ef")]
+offset_left = -58.0
+offset_top = 248.0
+offset_right = 78.0
+offset_bottom = 384.0
+value = 5
+
+[node name="NumberButton4" parent="NumberButtons" instance=ExtResource("6_p57ef")]
+offset_left = 1343.0
+offset_top = -380.0
+offset_right = 1479.0
+offset_bottom = -244.0
+
+[node name="NumberButton5" parent="NumberButtons" instance=ExtResource("6_p57ef")]
+offset_left = 720.0
+offset_top = 15.0
+offset_right = 856.0
+offset_bottom = 151.0
+value = 1
+
+[node name="NumberButton6" parent="NumberButtons" instance=ExtResource("6_p57ef")]
+offset_left = 1531.0
+offset_top = 306.0
+offset_right = 1667.0
+offset_bottom = 442.0
+value = 6
+
+[node name="NumberButton7" parent="NumberButtons" instance=ExtResource("6_p57ef")]
+offset_left = 2371.0
+offset_top = 129.0
+offset_right = 2507.0
+offset_bottom = 265.0
+value = 9
+
+[node name="NumberButton8" parent="NumberButtons" instance=ExtResource("6_p57ef")]
+offset_left = 186.0
+offset_top = -210.0
+offset_right = 322.0
+offset_bottom = -74.0
+value = 4
+
+[node name="NumberButton9" parent="NumberButtons" instance=ExtResource("6_p57ef")]
+offset_left = 792.0
+offset_top = 457.0
+offset_right = 928.0
+offset_bottom = 593.0
+value = 3
+
+[node name="NumberButton10" parent="NumberButtons" instance=ExtResource("6_p57ef")]
+offset_left = -531.0
+offset_top = 471.0
+offset_right = -395.0
+offset_bottom = 607.0
+value = 7
+
+[node name="NumberButton12" parent="NumberButtons" instance=ExtResource("6_p57ef")]
+offset_left = -1197.0
+offset_top = 462.0
+offset_right = -1061.0
+offset_bottom = 598.0
+value = 12
+
+[node name="SubmitButton" parent="NumberButtons" instance=ExtResource("6_p57ef")]
+offset_left = -426.0
+offset_top = -186.0
+offset_right = -290.0
+offset_bottom = -50.0
+value = 10
+
 [node name="Slime" parent="." instance=ExtResource("2_yqjtg")]
+z_index = 1
 position = Vector2(438, 434)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -50)
+position_smoothing_enabled = true
+
+[node name="ManualInput" type="TextEdit" parent="Camera2D"]
+offset_left = -239.0
+offset_top = -188.0
+offset_right = 243.0
+offset_bottom = -139.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+placeholder_text = "Type in the numbers here: (press [ENTER] to submit)"
+emoji_menu_enabled = false
+wrap_mode = 1
+autowrap_mode = 1

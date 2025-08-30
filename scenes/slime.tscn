@@ -27,7 +27,18 @@ sprite_frames = SubResource("SpriteFrames_n6pvg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_p2gj0")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 37)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+[node name="NumberButtonDetector" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NumberButtonDetector"]
 shape = SubResource("RectangleShape2D_p2gj0")
+
+[node name="NumberButtonCollider" type="RayCast2D" parent="."]
+position = Vector2(0, -26)
+target_position = Vector2(0, 52)
+collision_mask = 16
+hit_from_inside = true
