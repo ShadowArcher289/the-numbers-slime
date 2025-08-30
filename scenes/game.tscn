@@ -96,7 +96,7 @@ position = Vector2(1825, -117)
 position = Vector2(919, -395)
 
 [node name="PlatormS15" parent="Platforms" instance=ExtResource("5_iywne")]
-position = Vector2(-765, -44)
+position = Vector2(-829, -42)
 
 [node name="PlatormS8" parent="Platforms" instance=ExtResource("5_iywne")]
 position = Vector2(-171, -239)
@@ -237,11 +237,11 @@ value = 10
 z_index = 1
 position = Vector2(438, 434)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="Slime"]
 offset = Vector2(0, -50)
 position_smoothing_enabled = true
 
-[node name="ManualInput" type="TextEdit" parent="Camera2D"]
+[node name="ManualInput" type="TextEdit" parent="Slime/Camera2D"]
 offset_left = -239.0
 offset_top = -188.0
 offset_right = 243.0

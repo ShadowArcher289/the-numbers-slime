@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var collision_shape_2d_2: CollisionShape2D = $Area2D/CollisionShape2D2
 
 @onready var number_button_detector: Area2D = $NumberButtonDetector
+@onready var collision_shape_2d: CollisionShape2D = $NumberButtonDetector/CollisionShape2D
 
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var number_button_collider: RayCast2D = $NumberButtonCollider
