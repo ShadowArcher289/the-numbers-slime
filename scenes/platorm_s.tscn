@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://b4ji80wm2246y"]
 
-[ext_resource type="Texture2D" uid="uid://dcjyqidyqm4bi" path="res://icon.svg" id="1_sblpq"]
+[ext_resource type="Texture2D" uid="uid://1ctvx1uosahc" path="res://sprites/platform.png" id="1_sblpq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_icxj5"]
-size = Vector2(130, 24)
+size = Vector2(128, 24)
 
 [node name="PlatormS" type="StaticBody2D"]
 
@@ -11,6 +11,6 @@ size = Vector2(130, 24)
 shape = SubResource("RectangleShape2D_icxj5")
 one_way_collision = true
 
-[node name="Icon2" type="Sprite2D" parent="."]
-scale = Vector2(0.890625, 0.244031)
+[node name="Platform" type="Sprite2D" parent="."]
+scale = Vector2(0.314607, 0.56)
 texture = ExtResource("1_sblpq")

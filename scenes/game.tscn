@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bmyxd7wkaq7v0"]
+[gd_scene load_steps=11 format=3 uid="uid://bmyxd7wkaq7v0"]
 
 [ext_resource type="Script" uid="uid://bms8te7hffdjl" path="res://scrpits/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://4bccyefe3f40" path="res://scenes/slime.tscn" id="2_yqjtg"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b7xmrq0d2ikll" path="res://scenes/platorm.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://b4ji80wm2246y" path="res://scenes/platorm_s.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://b6v75ufqxa603" path="res://scenes/number_button.tscn" id="6_p57ef"]
+[ext_resource type="Texture2D" uid="uid://1ctvx1uosahc" path="res://sprites/platform.png" id="6_u5sy4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yqjtg"]
 size = Vector2(5232, 77)
@@ -217,9 +218,15 @@ position = Vector2(583, 633.5)
 shape = SubResource("RectangleShape2D_yqjtg")
 
 [node name="Icon" type="Sprite2D" parent="Boundaries/Ground"]
+visible = false
 position = Vector2(547.25, 894)
 scale = Vector2(56.8711, 4.73437)
 texture = ExtResource("3_lnu2h")
+
+[node name="Platform" type="Sprite2D" parent="Boundaries/Ground"]
+position = Vector2(520, 889.5)
+scale = Vector2(20.6461, 11.86)
+texture = ExtResource("6_u5sy4")
 
 [node name="WallR" type="StaticBody2D" parent="Boundaries"]
 position = Vector2(3191, 30)
