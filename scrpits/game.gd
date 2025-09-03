@@ -40,7 +40,6 @@ func _process(delta: float) -> void:
 func _add_to_calc(value: int): # adds a given number to the list of numberrs
 	results = 0;
 	number_to_be_calculated += str(value);
-	print(number_to_be_calculated);
 
 func _backspace_from_calc() -> void:
 	if number_to_be_calculated != "": # if not empty already
@@ -49,22 +48,25 @@ func _backspace_from_calc() -> void:
 func _manual_input() -> void: # code for the manual input
 	manual_input.show();
 	if Input.is_action_pressed("enter"):
-		number_to_be_calculated = manual_input.text;
+		number_to_be_calculated = manual_input.text;		
 		_calculate_results();
 		manual_input.hide();
 		manual_input.text = "";
 		number_to_be_calculated = "";
 
 
-func calculate(input: int): # converts the stored number_to_be_calculated into an int, calling number_sum with it and sets results to the output of number_sum
-	results = number_sum(int(input));
+func calculate(input: String): # converts the stored number_to_be_calculated into an int, calling number_sum with it and sets results to the output of number_sum
+	results = number_sum(input);
 	number_to_be_calculated = "";
 	
 func _calculate_results() -> void:
-	calculate(int(number_to_be_calculated));
+	print("number to be calculated: " + number_to_be_calculated)
+	print("number to be calculated int: " + number_to_be_calculated)
+	calculate(number_to_be_calculated);
 
-func number_sum(input: int): # calculates te math thing for the challenge
-	var string_input = str(input);
+func number_sum(input: String): # calculates te math thing for the challenge
+	var string_input = input.replace("\n", "");
+	print("input" + string_input)
 	var data : Array = string_input.split("");
 	print(str(data))
 	var output := 0;
