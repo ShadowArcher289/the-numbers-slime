@@ -1,5 +1,13 @@
 extends Node2D
 
+#Given a string of numbers, find the sum of all numbers in the list that have matching digits right next to each other, for example:
+
+#`1122` produces a sum of `3` derived from adding `(1 + 2)` because the first digit (`1`) matches the second digit and the third digit (`2`) matches the fourth digit.
+#`1111` produces `4` because each digit (all 1) matches the next.
+#`1234` produces `0` because no digit matches the next.
+#`91212129` produces `9` because the only digit that matches the next one is the last digit, `9`, as the two edge numbers touch.
+
+
 @onready var slime: CharacterBody2D = $Slime
 @onready var results_label: Label = $ResultsLabel
 @onready var camera_2d: Camera2D = $Slime/Camera2D
