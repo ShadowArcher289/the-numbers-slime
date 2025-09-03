@@ -63,6 +63,8 @@ func _on_slime_press() -> void: # sends signal to input a number into the curren
 		else:
 			darken_rect.show();
 			SignalBus.emit_signal("number_input", value);
-			
+		
+		SoundManager.button_click_sfx.play();
+		
 		await click_delay.timeout;
 		darken_rect.hide();

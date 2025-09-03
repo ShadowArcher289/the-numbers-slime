@@ -57,6 +57,7 @@ func move(delta: float) -> void: # runs player movement
 		jump_timer.start();
 		animated_sprite_2d.play("jump");
 		await get_tree().create_timer(0.2).timeout;
+		SoundManager.jump_sfx.play();
 		velocity.y -= 2000;
 	
 	#if ray_cast_2d.is_colliding(): # if colliding (presumably the ground) sets jump to false, allowing to jump again

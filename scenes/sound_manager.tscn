@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgwtp3j61sa2w"]
+
+[ext_resource type="Script" uid="uid://cm4hie3afa2tt" path="res://SoundManager.gd" id="1_5lwbd"]
+[ext_resource type="AudioStream" uid="uid://gh6skomnnig6" path="res://audio/throw.wav" id="2_ro3ww"]
+[ext_resource type="AudioStream" uid="uid://cd1v8nv05dqw7" path="res://audio/small metal case closed 1.wav" id="3_v1pt3"]
+[ext_resource type="AudioStream" uid="uid://dhfk4mha8b72j" path="res://audio/time_for_adventure.mp3" id="4_mpi5b"]
+
+[node name="SoundManager" type="Node2D"]
+script = ExtResource("1_5lwbd")
+
+[node name="JumpSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ro3ww")
+
+[node name="ButtonClickSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_v1pt3")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mpi5b")
+autoplay = true
+parameters/looping = true

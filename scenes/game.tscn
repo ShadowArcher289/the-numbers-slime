@@ -262,3 +262,11 @@ placeholder_text = "Type in the numbers here: (press [ENTER] to submit)"
 emoji_menu_enabled = false
 wrap_mode = 1
 autowrap_mode = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 12.0
+offset_top = 520.0
+offset_right = 369.0
+offset_bottom = 577.0
+text = "A, <-  :Left | D, ->: Right | W, ^: Jump
+Space: Click/Select Number or open The Shack"
