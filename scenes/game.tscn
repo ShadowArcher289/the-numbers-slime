@@ -269,5 +269,5 @@ offset_left = 12.0
 offset_top = 520.0
 offset_right = 369.0
 offset_bottom = 577.0
-text = "A, <-  :Left | D, ->: Right | W, ^: Jump
-Space: Click/Select Number or open The Shack"
+text = "A, <-  :Left | D, ->: Right | Space: Jump
+W, ^: Click/Select Number or open The Shack"
