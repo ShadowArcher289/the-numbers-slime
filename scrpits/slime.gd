@@ -38,7 +38,7 @@ func _process(delta: float) -> void:
 		await get_tree().create_timer(0.1).timeout
 		SignalBus.emit_signal("slime_press");
 		await get_tree().create_timer(0.4).timeout
-		gravity = 100;
+		gravity = 50;
 		#await get_tree().create_timer(0.1).timeout
 		#self.position.y += 20;
 
