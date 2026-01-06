@@ -14,7 +14,7 @@ var SPEED = 300;
 var SPRINT_SPEED = 600;
 var jumping = false;
 var fly = false;
-var gravity = 100;
+var gravity = 50;
 
 func _process(delta: float) -> void:
 	if fly: # fly mode
